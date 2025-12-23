@@ -4,7 +4,6 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from pydantic import BaseModel
 from tensorflow import keras
-import numpy as np
 from src.model.model_pipeline import run_model_pipeline
 from src.data.clean_transform import clean_text
 from src.api.model_loader import ModelLoader
