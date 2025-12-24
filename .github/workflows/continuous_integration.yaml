@@ -47,4 +47,4 @@ jobs:
           AWS_DEFAULT_REGION: us-east-1
           BUCKET_NAME: test-bucket
         run: |
-          pytest -m tests/
+          python -m pytest tests/
