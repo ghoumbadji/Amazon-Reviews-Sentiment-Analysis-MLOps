@@ -47,10 +47,11 @@ def read_root():
         }
     }
 
+
 # Endpoint Health
 @app.get("/health")
 def health_check():
-    if loader.model is None:
+    if loader is None or loader.model is None:
         raise HTTPException(status_code=503, detail="Model not loaded")
     return {"status": "ok", "model_loaded": True}
 
