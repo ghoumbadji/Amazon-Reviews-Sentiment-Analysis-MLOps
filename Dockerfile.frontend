@@ -21,14 +21,10 @@ RUN pip install --no-cache-dir --upgrade pip \
 COPY src ./src
 
 # Streamlit config
-ENV STREAMLIT_SERVER_PORT=8501
-ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
+ENV GRADIO_SERVER_NAME="0.0.0.0"
+ENV GRADIO_SERVER_PORT=7860
 
-EXPOSE 8501
+EXPOSE 7860
 
-# Start Streamlit
-CMD ["streamlit", "run", "src/frontend/app.py", \
-     "--server.port=8501", \
-     "--server.address=0.0.0.0", \
-     "--server.enableCORS=false", \
-     "--server.enableXsrfProtection=false"]
+# Start Gradio
+CMD ["python", "src/frontend/app.py"]
