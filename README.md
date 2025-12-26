@@ -43,7 +43,8 @@ Our project focuses on **Natural Language Processing (NLP)** applied to the Amaz
 
 ---
 
-## AWS services used
+## Architecture overview
+![Architecture Overview](images/mlops-pipeline.png)
 
 | AWS Service | Resource name                     | Role |
 |------------|-----------------------------------|------|
@@ -57,16 +58,10 @@ Our project focuses on **Natural Language Processing (NLP)** applied to the Amaz
 | App Runner | service-api                | Deployment and hosting of the inference API (Backend) |
 | App Runner | service-frontend           | Deployment and hosting of the User Interface (Frontend) |
 
----
-
-## Architecture overview
-![Architecture Overview](images/mlops-pipeline.png)
 
 ---
 
 ## Model
-The model was trained on a sample of the . We use a very simple architecture consisting in an Embedding layer and the sequence of some
-
 
 The model was trained on a sample of the **amazon_polarity dataset** from Hugging Face. It is a binary text classification model based on a simple **BiLSTM** architecture, composed of an embedding layer followed by two bidirectional LSTM layers and fully connected layers with dropout for regularization.
 
@@ -90,7 +85,7 @@ This project uses **GitHub Actions** for full automation:
     * Uses Terraform to provision the base AWS infrastructure (S3 Bucket, ECR Repositories, IAM Roles).
     * Includes a "Plan Only" mode for safety before applying changes.
 
-3.  **Training Pipeline (`training.yml`):**
+3.  **Training Pipeline (`training.yaml`):**
     * Triggered manually via `workflow_dispatch`.
     * Downloads the latest dataset from S3.
     * Retrains the TensorFlow model and evaluates performance metrics.
