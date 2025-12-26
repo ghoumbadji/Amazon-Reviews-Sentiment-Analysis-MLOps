@@ -1,0 +1,37 @@
+# Git
+.git
+.gitignore
+
+# Python Cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment variables & Secrets
+.env
+.env.local
+terraform/
+*.tfstate
+*.tfstate.backup
+
+# Tests & Docs
+tests/
+docs/
+images/
+README.md
+
+# IDE configurations
+.vscode/
+.idea/
+
+# Docker
+Dockerfile*
+docker-compose.yml
+.dockerignore
